@@ -1,4 +1,4 @@
-const apiKey = "60246f5a42b2afa7d30f29e5f4bf207b"; // Your OpenWeatherMap API key
+const apiKey = "60246f5a42b2afa7d30f29e5f4bf207b"; 
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 const searchBox = document.querySelector(".search input");
@@ -7,7 +7,7 @@ const weatherIcon = document.querySelector(".w1 img");
 
 async function getWeather(city) {
     try {
-        const encodedCity = encodeURIComponent(city.trim()); // Encode city name properly
+        const encodedCity = encodeURIComponent(city.trim()); 
         const response = await fetch(`${apiUrl}${encodedCity},IN&appid=${apiKey}`);
 
         if (!response.ok) {
@@ -16,7 +16,7 @@ async function getWeather(city) {
         }
 
         const data = await response.json();
-        console.log("API Response:", data); // Debugging log
+        console.log("API Response:", data); 
 
         // Ensure required data exists
         if (!data.main || !data.weather) throw new Error("Incomplete weather data received.");
